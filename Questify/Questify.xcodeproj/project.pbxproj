@@ -13,6 +13,7 @@
 		0F82EDA3223D4DEE000F07E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDA2223D4DEE000F07E8 /* Assets.xcassets */; };
 		0F82EDA6223D4DEE000F07E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDA4223D4DEE000F07E8 /* LaunchScreen.storyboard */; };
 		0FFDC528223D543D009A9A04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFDC527223D543D009A9A04 /* BaseViewController.swift */; };
+		B22EA1334E4135C25D8B839E /* Pods_Questify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBA56506FF2D21F556E560E /* Pods_Questify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		0F82EDA5223D4DEE000F07E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F82EDA7223D4DEE000F07E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFDC527223D543D009A9A04 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		940E0BA09EB777317E181786 /* Pods-Questify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questify.release.xcconfig"; path = "Target Support Files/Pods-Questify/Pods-Questify.release.xcconfig"; sourceTree = "<group>"; };
+		A4500AD9474A01F898C20190 /* Pods-Questify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questify.debug.xcconfig"; path = "Target Support Files/Pods-Questify/Pods-Questify.debug.xcconfig"; sourceTree = "<group>"; };
+		DDBA56506FF2D21F556E560E /* Pods_Questify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Questify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22EA1334E4135C25D8B839E /* Pods_Questify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0F82ED9A223D4DED000F07E8 /* Questify */,
 				0F82ED99223D4DED000F07E8 /* Products */,
+				BC941723FADFAEF6731F22C8 /* Pods */,
+				1B49D58817479545B5A1A79A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		1B49D58817479545B5A1A79A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDBA56506FF2D21F556E560E /* Pods_Questify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC941723FADFAEF6731F22C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4500AD9474A01F898C20190 /* Pods-Questify.debug.xcconfig */,
+				940E0BA09EB777317E181786 /* Pods-Questify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F82EDAA223D4DEE000F07E8 /* Build configuration list for PBXNativeTarget "Questify" */;
 			buildPhases = (
+				BDE4B02DADD0890AA423BA4C /* [CP] Check Pods Manifest.lock */,
 				0F82ED94223D4DED000F07E8 /* Sources */,
 				0F82ED95223D4DED000F07E8 /* Frameworks */,
 				0F82ED96223D4DED000F07E8 /* Resources */,
+				591DC6838C86E4A0F2456ECE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		591DC6838C86E4A0F2456ECE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Questify/Pods-Questify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Questify/Pods-Questify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDE4B02DADD0890AA423BA4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Questify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F82ED94223D4DED000F07E8 /* Sources */ = {
@@ -314,6 +392,7 @@
 		};
 		0F82EDAB223D4DEE000F07E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4500AD9474A01F898C20190 /* Pods-Questify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -333,6 +412,7 @@
 		};
 		0F82EDAC223D4DEE000F07E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 940E0BA09EB777317E181786 /* Pods-Questify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
