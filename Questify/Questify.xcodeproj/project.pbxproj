@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0F82ED9C223D4DED000F07E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82ED9B223D4DED000F07E8 /* AppDelegate.swift */; };
-		0F82ED9E223D4DED000F07E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82ED9D223D4DED000F07E8 /* ViewController.swift */; };
+		0F82ED9E223D4DED000F07E8 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82ED9D223D4DED000F07E8 /* RootVC.swift */; };
 		0F82EDA1223D4DED000F07E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F82ED9F223D4DED000F07E8 /* Main.storyboard */; };
 		0F82EDA3223D4DEE000F07E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDA2223D4DEE000F07E8 /* Assets.xcassets */; };
 		0F82EDA6223D4DEE000F07E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDA4223D4DEE000F07E8 /* LaunchScreen.storyboard */; };
+		0FFDC528223D543D009A9A04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFDC527223D543D009A9A04 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F82ED98223D4DED000F07E8 /* Questify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F82ED9B223D4DED000F07E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F82ED9D223D4DED000F07E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F82ED9D223D4DED000F07E8 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		0F82EDA0223D4DED000F07E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F82EDA2223D4DEE000F07E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F82EDA5223D4DEE000F07E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F82EDA7223D4DEE000F07E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FFDC527223D543D009A9A04 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,46 @@
 			isa = PBXGroup;
 			children = (
 				0F82ED9B223D4DED000F07E8 /* AppDelegate.swift */,
-				0F82ED9D223D4DED000F07E8 /* ViewController.swift */,
 				0F82ED9F223D4DED000F07E8 /* Main.storyboard */,
 				0F82EDA2223D4DEE000F07E8 /* Assets.xcassets */,
+				0FFDC526223D53DE009A9A04 /* Helpers */,
+				0FFDC523223D53A7009A9A04 /* Model */,
+				0FFDC524223D53B8009A9A04 /* View */,
+				0FFDC525223D53C1009A9A04 /* Controller */,
+				0F82ED9D223D4DED000F07E8 /* RootVC.swift */,
+				0FFDC527223D543D009A9A04 /* BaseViewController.swift */,
 				0F82EDA4223D4DEE000F07E8 /* LaunchScreen.storyboard */,
 				0F82EDA7223D4DEE000F07E8 /* Info.plist */,
 			);
 			path = Questify;
+			sourceTree = "<group>";
+		};
+		0FFDC523223D53A7009A9A04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FFDC524223D53B8009A9A04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FFDC525223D53C1009A9A04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FFDC526223D53DE009A9A04 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F82ED9E223D4DED000F07E8 /* ViewController.swift in Sources */,
+				0F82ED9E223D4DED000F07E8 /* RootVC.swift in Sources */,
 				0F82ED9C223D4DED000F07E8 /* AppDelegate.swift in Sources */,
+				0FFDC528223D543D009A9A04 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3EGVDKW93;
 				INFOPLIST_FILE = Questify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3EGVDKW93;
 				INFOPLIST_FILE = Questify/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
