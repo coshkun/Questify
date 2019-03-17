@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SocketIO
+import SwiftyJSON
 
 class GamePageVC: BaseViewController {
     
@@ -19,21 +21,24 @@ class GamePageVC: BaseViewController {
     
     @IBOutlet weak var tableView:UITableView!
     
-    var item: Question! = Question()
-    
-    var dataSource:[Answer]! = [ Answer(id:0, title:"Option A", isSelected:false, isCorrect:true),
-                                 Answer(id:0, title:"Option B", isSelected:false, isCorrect:true),
-                                 Answer(id:0, title:"Option C", isSelected:false, isCorrect:true),
-                                 Answer(id:0, title:"Option D", isSelected:false, isCorrect:true)]
+    //Data Relateds
+    var dataSource:[Answer]! = [Answer]()
     let kMaxPlayerLife = 3 // <- we use this to reset UI
     let kMaxRemainingTimeInSec = 20 // <- also resets UI
+    var questionCount = 0
     
     let cell_id     = "AnswerTVCell_id"
     let cell_height = CGFloat(56.0)
 
     
+    //Socket Relateds
+    let sessionToken:String = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+    var manager: SocketManager!
+    var socket:SocketIOClient!
+    var isConnected = false
     
     
+    ////////////////////////////////////////////// START LOADING //////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,9 +50,10 @@ class GamePageVC: BaseViewController {
 
         // Do any additional setup after loading the view.
         setupViews()
+        clearUI()
         connectSokets() {
             // Do somethings related
-            self.clearUI()
+            self.reloadUI()
         }
     }
     
@@ -61,6 +67,7 @@ class GamePageVC: BaseViewController {
     
     @IBAction func quitButton_Action(_ sender:UIButton!) {
         //But finish the Quiz First !!!
+        socket.disconnect()
         navigationController?.popViewController(animated: true)
     }
 
@@ -75,14 +82,48 @@ class GamePageVC: BaseViewController {
 //
 extension GamePageVC {
     func connectSokets(_ completion: (() -> ())? = nil ) {
+        //Create Socketio instances first
+        manager = SocketManager(socketURL: URL(string: "http://localhost:5000/")!,
+                                config: [.log(false), .connectParams(["token" : sessionToken ])] )
+        socket = manager.defaultSocket
         
+        registerHandlers()
+        
+        socket.on(clientEvent: .connect) { [weak self] data, ackEmitter in
+            self?.isConnected = true
+            print("*** Socket Server Connected ***")
+            self?.socket.emit("hello", with: ["hello server"] )
+        }
+        
+        socket.connect()
         
         //when we finish, ivoke the closure
         completion?()
     }
     
+    func getCurrentQuestion() -> Question? {
+        //magic happens here
+        if let current = DataContext.shared.currentQuestion { return current }
+        //else
+        guard DataContext.shared.questions.count > 0 else {return nil}
+        let first = DataContext.shared.questions.removeFirst()
+        //questionCount += 1   // <-we will remove this later, user must answer first
+        DataContext.shared.currentQuestion = first
+        return first
+    }
+    
     func reloadUI() {
-        clearUI()
+        //fill the UI data here..
+        if let current = getCurrentQuestion() {
+            questionLabel.text = current.title
+            setLifeWith(kMaxPlayerLife)
+            setRemainingTime(kMaxRemainingTimeInSec)
+            setCurrentQuestion(questionCount, In: DataContext.shared.questions.count + 1) // +1 is the current question
+            dataSource = current.answers
+            tableView.reloadData()
+        } else {
+            clearUI()
+        }
     }
     
     func clearUI(){ // this may renamed as 'resetUI' if you want to totaly clear everything
@@ -90,6 +131,10 @@ extension GamePageVC {
         setRemainingTime(kMaxRemainingTimeInSec)
         setCurrentQuestion(0, In: dataSource.count)
         questionLabel.text = "Waitng for next question!"
+    }
+    
+    func evaluateAnswer(_ answer:Answer) {
+        
     }
     
     func setLifeWith(_ count:Int) {
@@ -121,6 +166,56 @@ extension GamePageVC {
     }
 }
 
+//////////////////////////////////////
+// Socket IO Event Handlers
+//
+extension GamePageVC {
+    func registerHandlers() {
+        
+        socket.on("startGame") { data, ackEmiter in
+            self.startGameHandler()
+            return
+        }
+        
+        socket.on("new_question") { data, ackEmitter in    // [weak self] data,
+            self.handleNewQuestion(data[0])
+        }
+        
+        // if we are Debuging or want to capture everything
+        socket.onAny { print("Received Event: \($0.event)") }  //with items => \(JSON($0.items ?? [""]).rawString()!)
+    }
+    
+    //MARK: - EVENT HANDLERS
+    func startGameHandler() {
+        
+    }
+    
+    func handleNewQuestion(_ data:Any) {
+        let json = JSON(arrayLiteral: data) // else {return}
+        //hendle errors if any
+        guard json.count > 0,
+              json["status"].intValue  == 0 // <- this guy is success state
+        else {
+            print("*** Socket Server Error: ", json["errorText"].stringValue )
+            return
+        }
+        
+        //get new quest
+        guard let newQ = Question(json: json[0]["response"]) // <- Parsing occurs in Object
+        else {
+            print("*** Question Parsing Err.")
+            return
+        }
+        
+        //add it to our cache
+        DataContext.shared.questions.append(newQ)
+        DataContext.shared.saveAllChanges()
+        //finaly update UI
+        reloadUI()
+        
+        print("*** Qustion Received:", newQ ) //Debug
+    }
+}
 
 
 
@@ -154,6 +249,8 @@ extension GamePageVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! AnswerTVCell
         dataSource[indexPath.row].isSelected = !dataSource[indexPath.row].isSelected //toogles
         cell.item = dataSource[indexPath.row] //updates cell
+        
+        evaluateAnswer(dataSource[indexPath.row])
     }
     
     func clearAllSelections() {

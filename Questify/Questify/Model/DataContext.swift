@@ -15,6 +15,7 @@ class DataContext {
     private init() { loadFromDisk() }
     
     var questions:[Question]! = [Question]()
+    var currentQuestion:Question? = nil
     //var user:[UserInfo]! = [UserInfo]()
     
     

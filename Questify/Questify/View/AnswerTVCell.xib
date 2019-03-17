@@ -64,8 +64,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJE-b7-AFy">
-                        <rect key="frame" x="50" y="10" width="250" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option X" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJE-b7-AFy">
+                        <rect key="frame" x="50" y="10" width="220" height="35"/>
                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                     <constraint firstItem="uEJ-Eb-qct" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="POg-Vi-ha4"/>
                     <constraint firstAttribute="trailing" secondItem="uEJ-Eb-qct" secondAttribute="trailing" constant="20" id="RPX-PM-lav"/>
                     <constraint firstAttribute="trailing" secondItem="EYX-an-yhZ" secondAttribute="trailing" constant="20" id="Vbk-sm-kQz"/>
-                    <constraint firstAttribute="trailing" secondItem="tJE-b7-AFy" secondAttribute="trailing" constant="20" id="ZbZ-wb-GE1"/>
+                    <constraint firstAttribute="trailing" secondItem="tJE-b7-AFy" secondAttribute="trailing" constant="50" id="ZbZ-wb-GE1"/>
                     <constraint firstItem="h0d-C5-7I8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dfD-um-nco"/>
                     <constraint firstItem="h0d-C5-7I8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="etJ-mH-ygj"/>
                     <constraint firstItem="tJE-b7-AFy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gGc-S2-Vgh"/>
