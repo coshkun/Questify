@@ -48,9 +48,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGE-Lq-TVA" userLabel="redBG">
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XGE-Lq-TVA" userLabel="redBG">
                         <rect key="frame" x="20" y="10" width="280" height="35"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.86666666670000003" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -82,6 +81,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="XGE-Lq-TVA" secondAttribute="bottom" constant="10.5" id="3nx-iW-MUZ"/>
                     <constraint firstAttribute="bottom" secondItem="tJE-b7-AFy" secondAttribute="bottom" constant="10.5" id="6xa-TY-hTh"/>
                     <constraint firstAttribute="bottom" secondItem="uEJ-Eb-qct" secondAttribute="bottom" constant="10.5" id="J6r-60-s2h"/>
                     <constraint firstAttribute="bottom" secondItem="EYX-an-yhZ" secondAttribute="bottom" constant="10.5" id="Ozb-IU-650"/>
@@ -89,9 +89,12 @@
                     <constraint firstAttribute="trailing" secondItem="uEJ-Eb-qct" secondAttribute="trailing" constant="20" id="RPX-PM-lav"/>
                     <constraint firstAttribute="trailing" secondItem="EYX-an-yhZ" secondAttribute="trailing" constant="20" id="Vbk-sm-kQz"/>
                     <constraint firstAttribute="trailing" secondItem="tJE-b7-AFy" secondAttribute="trailing" constant="50" id="ZbZ-wb-GE1"/>
+                    <constraint firstAttribute="trailing" secondItem="XGE-Lq-TVA" secondAttribute="trailing" constant="20" id="brR-w5-ZDm"/>
                     <constraint firstItem="h0d-C5-7I8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dfD-um-nco"/>
                     <constraint firstItem="h0d-C5-7I8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="etJ-mH-ygj"/>
+                    <constraint firstItem="XGE-Lq-TVA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fpJ-ng-sDi"/>
                     <constraint firstItem="tJE-b7-AFy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gGc-S2-Vgh"/>
+                    <constraint firstItem="XGE-Lq-TVA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hBf-AT-h1x"/>
                     <constraint firstItem="uEJ-Eb-qct" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="j1o-hi-kQb"/>
                     <constraint firstItem="EYX-an-yhZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jGj-ga-Iqy"/>
                     <constraint firstItem="tJE-b7-AFy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="kbe-GM-QIk"/>

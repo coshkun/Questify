@@ -26,6 +26,7 @@ class GamePageVC: BaseViewController {
     let kMaxPlayerLife = 3 // <- we use this to reset UI
     let kMaxRemainingTimeInSec = 20 // <- also resets UI
     var questionCount = 0
+    var hasAnswered = false //this gives user some space before evaluation
     
     let cell_id     = "AnswerTVCell_id"
     let cell_height = CGFloat(56.0)
@@ -121,20 +122,40 @@ extension GamePageVC {
             setCurrentQuestion(questionCount, In: DataContext.shared.questions.count + 1) // +1 is the current question
             dataSource = current.answers
             tableView.reloadData()
+            tableView.isUserInteractionEnabled = true //unlocks
         } else {
             clearUI()
         }
     }
     
     func clearUI(){ // this may renamed as 'resetUI' if you want to totaly clear everything
+        tableView.isUserInteractionEnabled = true
         setLifeWith(kMaxPlayerLife)
         setRemainingTime(kMaxRemainingTimeInSec)
         setCurrentQuestion(0, In: dataSource.count)
         questionLabel.text = "Waitng for next question!"
+        dataSource = [Answer]() //cleans the table
+        tableView.reloadData()
     }
     
-    func evaluateAnswer(_ answer:Answer) {
+    func evaluateAnswer(_ answer:Answer, _ indexPath:IndexPath) {
+        //if hasAnswered { return } // answer every question just one time
         
+        let cell = tableView.cellForRow(at: indexPath) as! AnswerTVCell
+        if answer.isSelected == answer.isCorrect {
+            cell.greenBG.isHidden = false
+        } else {
+            cell.redBG.isHidden = false
+        }
+        tableView.isUserInteractionEnabled = false
+        
+        //show user the answer 5sec and jump next question
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            DataContext.shared.currentQuestion = nil
+            self.reloadUI()
+        }
+        
+        //hasAnswered = true
     }
     
     func setLifeWith(_ count:Int) {
@@ -244,13 +265,20 @@ extension GamePageVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        hasAnswered = false // <- ignores previous dispatch tasks (if exist)
         
         clearAllSelections()
         let cell = tableView.cellForRow(at: indexPath) as! AnswerTVCell
         dataSource[indexPath.row].isSelected = !dataSource[indexPath.row].isSelected //toogles
         cell.item = dataSource[indexPath.row] //updates cell
         
-        evaluateAnswer(dataSource[indexPath.row])
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { // gives user 5sec to change his choice
+//            self.evaluateAnswer(self.dataSource[indexPath.row], indexPath)
+//        }
+        
+        //it wont work healty, just get the answer and lock UI
+        self.evaluateAnswer(self.dataSource[indexPath.row], indexPath)
+        tableView.isUserInteractionEnabled = false
     }
     
     func clearAllSelections() {

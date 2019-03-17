@@ -50,4 +50,10 @@ class AnswerTVCell: UITableViewCell {
         tickLabel.isHidden = !item.isSelected
     }
     
+    override func prepareForReuse() {
+        titleLB.text = ""
+        tickLabel.isHidden = true
+        greenBG.isHidden = true
+        redBG.isHidden = true
+    }
 }
