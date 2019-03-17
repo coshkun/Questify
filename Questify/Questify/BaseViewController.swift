@@ -47,7 +47,7 @@ class BaseTVCell: UITableViewCell {
     
     func setSelectedCellStyle() {
         let bgColorView = UIView(frame: frame)
-        bgColorView.backgroundColor = RegisteredColors.tintRed.withAlphaComponent(0.35)
+        bgColorView.backgroundColor = RegisteredColors.tintBlue.withAlphaComponent(0.35)
         selectedBackgroundView = bgColorView
     }
     

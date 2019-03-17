@@ -11,6 +11,8 @@
 		0F0A3E43223DA2060010A9F0 /* GamePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A3E42223DA2060010A9F0 /* GamePageVC.swift */; };
 		0F0A3E45223DB6730010A9F0 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A3E44223DB6720010A9F0 /* DataContext.swift */; };
 		0F0A3E47223DB7000010A9F0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A3E46223DB7000010A9F0 /* Question.swift */; };
+		0F6B5C30223E77AD00C9A11F /* AnswerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6B5C2E223E77AD00C9A11F /* AnswerTVCell.swift */; };
+		0F6B5C31223E77AD00C9A11F /* AnswerTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B5C2F223E77AD00C9A11F /* AnswerTVCell.xib */; };
 		0F82ED9C223D4DED000F07E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82ED9B223D4DED000F07E8 /* AppDelegate.swift */; };
 		0F82ED9E223D4DED000F07E8 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F82ED9D223D4DED000F07E8 /* RootVC.swift */; };
 		0F82EDA1223D4DED000F07E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F82ED9F223D4DED000F07E8 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		0F0A3E42223DA2060010A9F0 /* GamePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePageVC.swift; sourceTree = "<group>"; };
 		0F0A3E44223DB6720010A9F0 /* DataContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
 		0F0A3E46223DB7000010A9F0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		0F6B5C2E223E77AD00C9A11F /* AnswerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTVCell.swift; sourceTree = "<group>"; };
+		0F6B5C2F223E77AD00C9A11F /* AnswerTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTVCell.xib; sourceTree = "<group>"; };
 		0F82ED98223D4DED000F07E8 /* Questify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F82ED9B223D4DED000F07E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F82ED9D223D4DED000F07E8 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		0FFDC524223D53B8009A9A04 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F6B5C2E223E77AD00C9A11F /* AnswerTVCell.swift */,
+				0F6B5C2F223E77AD00C9A11F /* AnswerTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				0F82EDA6223D4DEE000F07E8 /* LaunchScreen.storyboard in Resources */,
 				0F82EDA3223D4DEE000F07E8 /* Assets.xcassets in Resources */,
 				0F82EDA1223D4DED000F07E8 /* Main.storyboard in Resources */,
+				0F6B5C31223E77AD00C9A11F /* AnswerTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +281,7 @@
 				0F82ED9E223D4DED000F07E8 /* RootVC.swift in Sources */,
 				0F82ED9C223D4DED000F07E8 /* AppDelegate.swift in Sources */,
 				0F0A3E43223DA2060010A9F0 /* GamePageVC.swift in Sources */,
+				0F6B5C30223E77AD00C9A11F /* AnswerTVCell.swift in Sources */,
 				0F0A3E41223D9C650010A9F0 /* Inspectables.swift in Sources */,
 				0F9945F6223D7B9D00D31890 /* LuncherVC.swift in Sources */,
 				0F9945F2223D6D6200D31890 /* Extentions.swift in Sources */,
