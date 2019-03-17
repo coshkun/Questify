@@ -2,23 +2,24 @@
 //  RegisteredColors.swift
 //  Questify
 //
-//  Created by Coskun Appwox on 16.03.2019.
-//  Copyright © 2019 Coskun Appwox. All rights reserved.
+//  Created by Coskun Caner on 16.03.2019.
+//  Copyright © 2019 Coskun Caner. All rights reserved.
 //
 
 import Foundation
-
-//#020033
 
 import UIKit
 
 struct RegisteredColors {
     
-    static let primaryRed = UIColor(hexString: "#DD042B")
-    static let tintRed = UIColor(hexString: "#F83F3F")
-    static let darkRed = UIColor(hexString: "#860909")
+    
+    static let tintYellow = UIColor(hexString: "#E4FF00")
+    static let tintRed = UIColor(hexString: "#E6254A")
+    static let tintBlue = UIColor(hexString: "#7A81FF")
     
     static let primaryGreen = UIColor(hexString: "#43BF2C")
+    static let primaryRed = UIColor(hexString: "#DD042B")
+    
     static let dirtyYellow = UIColor(hexString: "#BFB42C")
     static let dirtyOrange = UIColor(hexString: "#E5491C")
     

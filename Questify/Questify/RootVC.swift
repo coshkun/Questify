@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Questify
 //
-//  Created by Coskun Appwox on 16.03.2019.
-//  Copyright © 2019 Coskun Appwox. All rights reserved.
+//  Created by Coskun Caner on 16.03.2019.
+//  Copyright © 2019 Coskun Caner. All rights reserved.
 //
 
 import UIKit

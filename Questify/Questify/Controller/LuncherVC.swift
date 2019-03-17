@@ -2,8 +2,8 @@
 //  LuncherVC.swift
 //  Questify
 //
-//  Created by Coskun Appwox on 16.03.2019.
-//  Copyright © 2019 Coskun Appwox. All rights reserved.
+//  Created by Coskun Caner on 16.03.2019.
+//  Copyright © 2019 Coskun Caner. All rights reserved.
 //
 
 import UIKit
@@ -21,8 +21,6 @@ class LuncherVC: BaseViewController {
         //Colorize Page
         setupViews()
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     func setupViews() {
         let grad = CAGradientLayer()
@@ -49,6 +47,7 @@ class LuncherVC: BaseViewController {
     
     @IBAction func startGameButton_Action(_ sender:UIButton!) {
         
+        RootVC.main.pushVC(named: "GamePageVC")
     }
     
     @IBAction func contactButton_Action(_ sender:UIButton!) {
