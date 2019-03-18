@@ -31,28 +31,28 @@ While the server is running, open your [Postman](https://www.getpostman.com/) an
 *example Request:*
 ```
 {
-"id":"1",
-"title":"What is the special fruid which growns only mediterrain area?",
-"answers": [
-{
-"id":"1",
-"title" : "Apple",
-"isSelected" : false,
-"isCorrect" : false
-},
-{
-"id":"2",
-"title" : "Mandarin",
-"isSelected" : false,
-"isCorrect" : true
-},
-{
-"id":"3",
-"title" : "Banana",
-"isSelected" : false,
-"isCorrect" : false
-}
-]
+    "id":"1",
+    "title":"What is the special fruid which growns only mediterrain area?",
+    "answers": [
+        {
+            "id":"1",
+            "title" : "Apple",
+            "isSelected" : false,
+            "isCorrect" : false
+        },
+        {
+            "id":"2",
+            "title" : "Mandarin",
+            "isSelected" : false,
+            "isCorrect" : true
+        },
+        {
+            "id":"3",
+            "title" : "Banana",
+            "isSelected" : false,
+            "isCorrect" : false
+        }
+    ]
 }
 ```
 
@@ -62,31 +62,31 @@ server will give a success message to you like below
 *example Response:*
 ```
 {
-"message": "Question Sent!",
-"response": {
-"answers": [
-{
-"id": "1",
-"isCorrect": false,
-"isSelected": false,
-"title": "Apple"
-},
-{
-"id": "2",
-"isCorrect": true,
-"isSelected": false,
-"title": "Mandarin"
-},
-{
-"id": "3",
-"isCorrect": false,
-"isSelected": false,
-"title": "Banana"
-}
-],
-"id": "1",
-"title": "What is the special fruid which growns only mediterrain area?"
-}
+    "message": "Question Sent!",
+    "response": {
+    "answers": [
+        {
+            "id": "1",
+            "isCorrect": false,
+            "isSelected": false,
+            "title": "Apple"
+        },
+        {
+            "id": "2",
+            "isCorrect": true,
+            "isSelected": false,
+            "title": "Mandarin"
+        },
+        {
+            "id": "3",
+            "isCorrect": false,
+            "isSelected": false,
+            "title": "Banana"
+        }
+    ],
+    "id": "1",
+    "title": "What is the special fruid which growns only mediterrain area?"
+    }
 }
 ```
 
