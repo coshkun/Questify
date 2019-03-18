@@ -26,7 +26,7 @@ v.1.0.0.b1000 Pre Beta for interview
 - make a post requet to see the demo on 'Game Page'
 
 * Configuration
-**Important:** You must have **Docker** installed on your system to succesfully test this project. *see  **[Server Help Document](https://bitbucket.org/tutorials/markdowndemo)** before start.*
+**Important:** You must have **Docker** installed on your system to succesfully test this project. *see  **[Server Help Document](https://github.com/coshkun/Questify/tree/master/Server)** before start.*
 
 **Dependencies**
 - All dependencies are included. 
