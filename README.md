@@ -7,7 +7,7 @@ This README would normally document whatever steps are necessary to get my appli
 ### *What is this repository for?* ###
 
 * Quick summary
-
+  it is just another nuke zone, if you fall here accidentally please keep surfing.
 
 * Version
 v.1.0.0.b1000 Pre Beta for interview
@@ -28,19 +28,20 @@ v.1.0.0.b1000 Pre Beta for interview
 * Configuration
 **Important:** You must have **Docker** installed on your system to succesfully test this project. *see  **[Server Help Document](https://bitbucket.org/tutorials/markdowndemo)** before start.*
 
-* Dependencies
+**Dependencies**
 - All dependencies are included. 
 - I've used *Socket.io* & *SwiftyJSON* libraries from Cocoapods  other than to Apple Core frameworks, to demonstrate an exemplar usage.
 - You may of course include them by their source files (if you prefer so)
 
-* Database configuration
+**Database configuration**
 None
 
-* How to run tests
+**How to run tests**
 None
 
-* Deployment instructions
+**Deployment instructions**
 Even it is ready to deploy a remote server through Docker Containers, i dont advise it for now. The API Server is still in very primitive state
+
 
 ### Contribution guidelines ###
 
